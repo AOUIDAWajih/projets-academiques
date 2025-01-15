@@ -15,15 +15,6 @@ _Fichier associé : `PROJET_representing_learning_NLP.ipynb`_
 ### Contraintes :
 - Utilisation de ressources libres et gratuites uniquement.
 - Interdiction d'utiliser des APIs ou de rechercher des articles en ligne.
-- Travail en groupe de 4 à 5 étudiants.
-
-### Calendrier :
-- Une soumission valide doit être réalisée sur Kaggle avant le **11 janvier 2025**.
-- Le notebook final doit être rendu sur Moodle avant le **12 janvier 2025**.
-
-### Notation :
-- La qualité des discussions et justifications dans le notebook.
-- Le classement final dans la compétition Kaggle.
 
 ---
 
