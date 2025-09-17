@@ -1,53 +1,82 @@
-# 🎓 Projets Académiques / Academic Projects
-
-## 🇫🇷 Français
+# 🎓 Projets Académiques
 
 Bienvenue sur mon dépôt **projets-academiques**, qui regroupe l'ensemble de mes travaux réalisés en **science des données**, **intelligence artificielle**, et **développement informatique**.  
-Chaque dossier contient un ou plusieurs notebooks/documentations liés à des projets concrets, souvent réalisés lors de cours, de compétitions Kaggle ou de recherches personnelles.  
+Chaque dossier contient un ou plusieurs notebooks/documentations liés à des projets concrets, souvent réalisés lors de cours, de compétitions Kaggle ou de recherches personnelles.
 
 ---
 
-## 🇬🇧 English
+## 🗂️ Table des matières
 
-Welcome to my repository **projets-academiques**, which brings together my work in **data science**, **artificial intelligence**, and **software development**.  
-Each folder contains one or more notebooks/documentation related to concrete projects, often carried out during courses, Kaggle competitions, or personal research.  
+- [📁 Computer Vision](#-computer-vision)
+- [📁 Kaggle Competition](#-kaggle-competition)
+- [📁 LLMs (Large Language Models)](#-llms-large-language-models)
+- [📁 NLP (Natural Language Processing)](#-nlp-natural-language-processing)
+- [📁 Prediction Projects](#-prediction-projects)
+- [📁 Time Series](#-time-series)
+- [📁 Projets universitaires](#-projets-universitaires)
 
 ---
 
-## 🗂️ Table des matières / Table of Contents
+## 📁 Computer Vision
 
-- [📁 Computer Vision](./Computer_Vision)  
-  🇫🇷 Notebooks liés à la vision par ordinateur : classification d'images, détection, augmentation de données, CNNs, etc.  
-  🇬🇧 Notebooks related to computer vision: image classification, detection, data augmentation, CNNs, etc.  
+> Notebooks liés à la vision par ordinateur : classification d'images, détection, augmentation de données, CNNs, etc.
 
-- [📁 Kaggle Competition](./Kaggle_Competition)  
-  🇫🇷 Projets réalisés pour des compétitions Kaggle : exploration de données, modélisation et évaluation.  
-  🇬🇧 Projects carried out for Kaggle competitions: data exploration, modeling, and evaluation.  
+🔗 [Accéder au dossier](./Computer_Vision)
 
-- [📁 LLMs (Large Language Models)](./LLMs)  
-  🇫🇷 Fine-tuning, inférence et évaluation de modèles de langage à grande échelle (BERT, GPT, etc.).  
-  🇬🇧 Fine-tuning, inference, and evaluation of large-scale language models (BERT, GPT, etc.).  
+---
 
-- [📁 NLP (Natural Language Processing)](./NLP)  
-  🇫🇷 Projets en traitement du langage naturel : classification de texte, résumé automatique, analyse de sentiments, etc.  
-  🇬🇧 Projects in natural language processing: text classification, automatic summarization, sentiment analysis, etc.  
+## 📁 Kaggle Competition
 
-- [📁 Prediction Projects](./Prediction%20projects)  
-  🇫🇷 Projets de prédiction supervisée (régression, classification) sur divers jeux de données.  
-  🇬🇧 Supervised prediction projects (regression, classification) on various datasets.  
+> Projets réalisés pour des compétitions Kaggle : exploration de données, modélisation et évaluation.
 
-- [📁 Time Series](./Time-Series)  
-  🇫🇷 Analyses de séries temporelles : prévision, détection d’anomalies, ARIMA, LSTM, Prophet, etc.  
-  🇬🇧 Time series analysis: forecasting, anomaly detection, ARIMA, LSTM, Prophet, etc.  
+🔗 [Accéder au dossier](./Kaggle_Competition)
 
-- [📁 Projets universitaires / University Projects](./uni_projects)  
-  🇫🇷 Projets réalisés dans le cadre de mes cours à l’université.  
-  🇬🇧 Projects carried out as part of my university courses.  
+---
+
+## 📁 LLMs (Large Language Models)
+
+> Fine-tuning, inférence, et évaluation de modèles de langage à grande échelle (BERT, GPT, etc.).
+
+🔗 [Accéder au dossier](./LLMs)
+
+---
+
+## 📁 NLP (Natural Language Processing)
+
+> Projets en traitement du langage naturel : classification de texte, résumé automatique, analyse de sentiments, etc.
+
+🔗 [Accéder au dossier](./NLP)
+
+---
+
+## 📁 Prediction Projects
+
+> Projets de prédiction supervisée (régression, classification) sur divers jeux de données.
+
+🔗 [Accéder au dossier](./Prediction%20projects)
+
+---
+
+## 📁 Time Series
+
+> Analyses de séries temporelles : prévision, détection d’anomalies, ARIMA, LSTM, Prophet, etc.
+
+🔗 [Accéder au dossier](./Time-Series)
+
+---
+
+## 📁 Projets universitaires
+
+> Projets réalisés dans le cadre de mes cours à l’université.
+
+🔗 [Accéder au dossier](./uni_projects)
 
 ---
 
 ## 🛠️ Installation & Reproduction
 
-```bash
-git clone https://github.com/AOUIDAWajih/projets-academiques.git
-cd projets-academiques
+1. Cloner le dépôt :
+
+   ```bash
+   git clone https://github.com/AOUIDAWajih/projets-academiques.git
+   cd projets-academiques
