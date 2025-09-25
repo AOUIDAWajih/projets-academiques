@@ -14,7 +14,7 @@ Chaque dossier contient un ou plusieurs notebooks/documentations liés à des pr
 - [📁 Prediction Projects](#-prediction-projects)
 - [📁 Time Series](#-time-series)
 - [📁 Projets universitaires](#-projets-universitaires)
-- [📁 n8n workflows_IA Agents](#-n8n-workflows-ia-agents)
+- [📁 n8n workflows (IA Agents)](#-n8n-workflows-ia-agents)
 
 ---
 
