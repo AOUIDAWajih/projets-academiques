@@ -74,7 +74,7 @@ Chaque dossier contient un ou plusieurs notebooks/documentations liés à des pr
 
 ---
 
-## 📁 n8n_workflows | IA Agents
+## 📁 n8n_workflows (IA Agents)
 
 > n8n Workflows : Automatisation et IA pour la transcription de vidéos, résumé d’emails et génération d’images.
 
