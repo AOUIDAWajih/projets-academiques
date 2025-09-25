@@ -1,1 +1,571 @@
-
+{
+  "name": "My workflow 3",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "12245f5e-ceb4-421f-9424-075e0449facb",
+      "name": "When clicking 'Execute workflow'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        -288,
+        272
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "playlistItem",
+        "operation": "getAll",
+        "playlistId": "REDACTED",
+        "part": [
+          "*",
+          "contentDetails",
+          "snippet",
+          "id",
+          "status"
+        ],
+        "returnAll": true,
+        "options": {}
+      },
+      "id": "32ff652f-c867-4ce1-938f-159e008736b7",
+      "name": "YouTube Playlist",
+      "type": "n8n-nodes-base.youTube",
+      "position": [
+        64,
+        272
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## step 1",
+        "height": 540,
+        "width": 940,
+        "color": 4
+      },
+      "id": "950f8769-51b5-47a3-b58c-0c902db4388f",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -64,
+        -48
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "mode": "url",
+          "value": "REDACTED"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": "REDACTED",
+          "cachedResultUrl": "REDACTED",
+          "cachedResultName": "Sheet1"
+        },
+        "columns": {
+          "value": {
+            "script": "={{ $('scirpt').item.json.script }}",
+            "summery": "={{ $json.output }}",
+            "row_number": "={{ $('Loop Over Items1').item.json.id }}",
+            "video titles": "={{ $('Loop Over Items1').item.json.title }}"
+          },
+          "schema": [
+            {
+              "id": "video titles",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "video titles",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "script",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "script",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "summery",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "summery",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "readOnly": true,
+              "required": false,
+              "displayName": "row_number",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            }
+          ],
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "row_number"
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "2aa5aad3-a644-4460-a9eb-7c753890b4a1",
+      "name": "Google Sheets3",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        3104,
+        272
+      ],
+      "typeVersion": 4.6
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Summarize the following podcast script.\nThe summary must be clear, well-organized, and comprehensive.\n\nInclude all important information, data, and key points from the script.\n\nDivide the summary into sections according to the main topics, ideas, or parts discussed in the podcast.\n\nFor each section, list all main points, facts, examples, and arguments mentioned.\n\nDo not omit any significant information or insight.\n\nThe summary should be detailed enough to give a full understanding of the podcast, but avoid unnecessary repetition or filler.\n\nUse headings and bullet points for clarity.\n\nThe result should be useful for someone who has not listened to the podcast but wants to understand all its important content and insights. podcast: {{ $json.firstTenSentences }}",
+        "options": {}
+      },
+      "id": "be67b0de-97da-44bc-91a1-b7cbafaaa935",
+      "name": "AI Agent1",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        2496,
+        112
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "content": "## step 5 : 📊 **Google Sheets3**\n\n## Updates a Google Sheet with video titles, scripts, summaries, and row numbers. ",
+        "height": 540,
+        "width": 440,
+        "color": 4
+      },
+      "id": "61e873d1-27d3-45b2-ad94-c3a0eb53bc6f",
+      "name": "Sticky Note10",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2944,
+        -48
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "6979d7ad-820e-4b83-a249-12b9b34d4aa4",
+      "name": "Loop Over Items1",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [
+        1200,
+        272
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "model": "llama-3.1-8b-instant",
+        "options": {}
+      },
+      "id": "b8a73a4f-7856-4a75-aa43-59afb8c1a983",
+      "name": "Groq Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "position": [
+        2464,
+        320
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "jsCode": "// Combine all \"text\" fields from the content array into one string\nlet script = '';\n\n// Loop through all input items\nfor (const item of items) {\n  if (item.json.content && Array.isArray(item.json.content)) {\n    for (const segment of item.json.content) {\n      if (segment.text) {\n        script += segment.text + ' ';\n      }\n    }\n  }\n}\n\nscript = script.trim();\n\nreturn [\n  {\n    json: {\n      script\n    }\n  }\n];\n"
+      },
+      "id": "c5801ac6-06b5-423d-90ba-17068e69bd4f",
+      "name": "scirpt",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        1888,
+        272
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "url": "=https://api.supadata.ai/v1/transcript?url=https://youtu.be/{{ $json.videoId}}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-api-key",
+              "value": "REDACTED"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1e6aadc6-5c8d-4641-af7f-ed1c7ab887e2",
+      "name": "supadata",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1584,
+        272
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "functionCode": "// Extract video URLs, titles, and add an id starting from 2\nreturn items.map((item, index) => {\n  const videoId = item.json.snippet.resourceId.videoId;\n  const title = item.json.snippet.title;\n  return {\n    json: {\n      id: index + 2,\n      url: `https://www.youtube.com/watch?v=${videoId}`,\n      title: title\n    }\n  };\n});\n"
+      },
+      "id": "feae29e3-53a6-477f-b86f-fe655d821298",
+      "name": "titles/URL",
+      "type": "n8n-nodes-base.function",
+      "position": [
+        368,
+        272
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "jsCode": "return items.map((item, index) => {\n  // Get the URL and title from the input\n  const url = item.json.url;\n  const title = item.json.title || null;\n  // Extract the video ID from the URL\n  let videoId = null;\n  if (url && url.includes('v=')) {\n    videoId = url.split('v=')[1].split('&')[0];\n  }\n  // id starts from 1; change to index+2 if you want to start from 2\n  return {\n    json: {\n      id: index + 2,\n      videoId,\n      title\n    }\n  };\n});\n"
+      },
+      "id": "eb820ba3-c848-4b05-8125-b2e15a369300",
+      "name": "video ID",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        656,
+        272
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the script text\nconst script = items[0].json.script || \"\";\n\n// Split into sentences using a regular expression\nconst sentences = script.match(/[^\\.!\\?]+[\\.!\\?]+/g) || [];\n\n// Get the first 10 sentences (or fewer if less than 10)\nconst firstTen = sentences.slice(0, 5).join(' ').trim();\n\nreturn [\n  {\n    json: {\n      firstTenSentences: firstTen\n    }\n  }\n];\n"
+      },
+      "id": "7b8f8750-f9b7-405f-8abf-9cccb5daf304",
+      "name": "Code1",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        2160,
+        272
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "id, videoId, title",
+        "options": {}
+      },
+      "id": "ecf0b7fb-3eb3-40d8-8186-c5b078673d5c",
+      "name": "Split Out",
+      "type": "n8n-nodes-base.splitOut",
+      "position": [
+        1008,
+        272
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "📺 **YouTube Playlist**\n\nFetches all videos from a specific YouTube playlist.\n\n**How to change:** Change the `playlistId` to use a different playlist. Adjust `part` to fetch different details. Change credentials for another YouTube account.",
+        "height": 420,
+        "width": 260,
+        "color": 5
+      },
+      "id": "c0cc647b-603e-4c25-98c5-e7ae1d513029",
+      "name": "YouTube Playlist Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -32,
+        32
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "🔗 **titles/URL (Function Node)**\n\nExtracts video URLs and titles from the playlist data and assigns a row ID.\n",
+        "height": 420,
+        "width": 260,
+        "color": 5
+      },
+      "id": "95058e9e-5eb2-4558-8c2f-3bacb6a1c6dd",
+      "name": "titles/URL Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        288,
+        32
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "🆔 **video ID (Code Node)**\n\nExtracts the video ID from each YouTube URL.\n",
+        "height": 420,
+        "width": 260,
+        "color": 5
+      },
+      "id": "d22be73f-1806-4c96-aeb4-0a24b8777c79",
+      "name": "video ID Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        576,
+        32
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "📝 **supadata (HTTP Request Node)**\n\nCalls the Supadata API to get the transcript for each video.\n\n**How to change:** Update the API URL or key if the service changes. Modify request headers or parameters for other APIs.",
+        "height": 440,
+        "width": 260,
+        "color": 5
+      },
+      "id": "3ee97f05-920a-42f3-b02f-6b4000d2c6d9",
+      "name": "supadata Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1504,
+        16
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "📜 **scirpt (Code Node)**\n\nCombines the transcript segments into a single script string.\n\n**How to change:** Change logic to format or preprocess the script differently (e.g., filter out certain lines).",
+        "height": 440,
+        "color": 5
+      },
+      "id": "70bf417d-9f9b-4fd1-98ed-11eee65bb7e7",
+      "name": "scirpt Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1808,
+        16
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "✂️ **Code1 (Code Node)**\n\nExtracts the first few sentences from the script for summarization.\n\n**How to change:** Adjust the number of sentences extracted. Change the splitting logic for different transcript formats.",
+        "height": 440,
+        "color": 5
+      },
+      "id": "125425a7-d385-4c19-9d4b-4e552a605655",
+      "name": "Code1 Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2096,
+        16
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## step 2",
+        "height": 540,
+        "width": 440,
+        "color": 4
+      },
+      "id": "cb295184-7983-47dc-ad92-97ff7da51232",
+      "name": "Sticky Note11",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        944,
+        -48
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## step 3",
+        "height": 540,
+        "width": 940,
+        "color": 4
+      },
+      "id": "b2187c4e-53e6-481d-8954-e24fbf7f56cd",
+      "name": "Sticky Note12",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1440,
+        -48
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## step 4 : 🤖 **Groq Chat Model (LLM Node)**\n\nchange the prompt if you want or change the ai model",
+        "height": 540,
+        "width": 480,
+        "color": 4
+      },
+      "id": "3b35ffcd-0ade-49a4-9ae9-9595f97af47f",
+      "name": "Sticky Note13",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2416,
+        -48
+      ],
+      "typeVersion": 1
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "scirpt": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "supadata": {
+      "main": [
+        [
+          {
+            "node": "scirpt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "video ID": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "titles/URL": {
+      "main": [
+        [
+          {
+            "node": "video ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets3": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "supadata",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "YouTube Playlist": {
+      "main": [
+        [
+          {
+            "node": "titles/URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking 'Execute workflow'": {
+      "main": [
+        [
+          {
+            "node": "YouTube Playlist",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "",
+  "meta": {
+    "instanceId": "b433d4f27e0b867ab8445880aeb2e482fd06258f080b8e74806a17210cd8bd98"
+  },
+  "tags": []
+}
