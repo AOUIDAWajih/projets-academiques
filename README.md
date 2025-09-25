@@ -14,6 +14,7 @@ Chaque dossier contient un ou plusieurs notebooks/documentations liés à des pr
 - [📁 Prediction Projects](#-prediction-projects)
 - [📁 Time Series](#-time-series)
 - [📁 Projets universitaires](#-projets-universitaires)
+- [📁 n8n_workflows | IA Agents](#-n8n_workflows-|-IA-Agents)
 
 ---
 
@@ -70,6 +71,14 @@ Chaque dossier contient un ou plusieurs notebooks/documentations liés à des pr
 > Projets réalisés dans le cadre de mes cours à l’université.
 
 🔗 [Accéder au dossier](./uni_projects)
+
+---
+
+## 📁 n8n_workflows | IA Agents
+
+> n8n Workflows : Automatisation et IA pour la transcription de vidéos, résumé d’emails et génération d’images.
+
+🔗 [Accéder au dossier](./n8n_workflows)
 
 ---
 
