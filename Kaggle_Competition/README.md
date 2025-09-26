@@ -8,7 +8,7 @@ Ce projet a pour objectif de développer un **système de résumé automatique**
 > 🥇 **Dans ce projet j'ai obtenu la 1ère place dans la compétition Kaggle** [M2 - Résumé d'articles scientifiques](https://www.kaggle.com/competitions/m-2-maliash-resume-darticles-scientifiques).
 
 ---
-
+ 
 ## 🎯 Objectifs du projet
 
 - Créer un modèle robuste capable de produire des résumés fiables à partir de textes scientifiques longs et complexes.
