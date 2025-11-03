@@ -11,7 +11,7 @@ Le notebook couvre les étapes de **prétraitement des données**, **entraîneme
 Le jeu de données utilisé est **`PJME_hourly.csv`**, contenant la **consommation horaire d'énergie (en MW)** pour la région PJME.  
 - Le fichier est indexé par une colonne **datetime**.
 - La variable cible est **`PJME_MW`**.
-
+ 
 ---
 
 ## 🛠️ Pré-requis
