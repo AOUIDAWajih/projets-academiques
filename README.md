@@ -6,7 +6,7 @@ Chaque dossier contient un ou plusieurs notebooks/documentations liés à des pr
 ---
 
 ## 🗂️ Table des matières
-
+ 
 - [📁 Computer Vision](#-computer-vision)
 - [📁 Kaggle Competition](#-kaggle-competition)
 - [📁 LLMs (Large Language Models)](#-llms-large-language-models)
