@@ -38,6 +38,24 @@ It enhances analytical reasoning — including *“why”* and open-ended strate
 
 ---
 
+## How to Run the Project
+
+1. Clone the repo
+git clone then cd 
+
+2. Create virtual environment (recommended)
+python -m venv venv
+source venv/bin/activate      # Linux/Mac
+ou
+venv\Scripts\activate         # Windows
+
+3. Install dependencies
+pip install -r requirements.txt
+
+4. Launch the app (official method)
+run the notebook
+
+
 ## 🧩 Project Architecture
 
 ```plaintext
@@ -54,3 +72,5 @@ User Input (JSON data + Question)
    [ Recommendation Agent ] → Strategic Suggestions
         ↓
    Streamlit UI → Interactive Display & Download
+
+
