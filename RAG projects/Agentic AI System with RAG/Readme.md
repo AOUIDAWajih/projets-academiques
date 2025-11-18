@@ -58,8 +58,7 @@ run the notebook
 ## Demo Video
 
 
-https://github.com/user-attachments/assets/3af93f71-89a8-4668-a96b-63fe52b272f2
-
+https://github.com/user-attachments/assets/f0f1af35-d828-489f-86dc-49364e9359e3
 
 
 
