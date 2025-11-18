@@ -56,7 +56,10 @@ pip install -r requirements.txt
 run the notebook
 
 ## Demo Video
-[streamlit-app-2025-11-18-12-11-59.webm](https://github.com/user-attachments/assets/54c7c810-a940-4978-9edd-995c0efea622)
+
+
+https://github.com/user-attachments/assets/3af93f71-89a8-4668-a96b-63fe52b272f2
+
 
 
 
