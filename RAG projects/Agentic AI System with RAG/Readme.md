@@ -55,6 +55,10 @@ pip install -r requirements.txt
 4. Launch the app (official method)
 run the notebook
 
+## Demo Video
+[streamlit-app-2025-11-18-12-11-59.webm](https://github.com/user-attachments/assets/54c7c810-a940-4978-9edd-995c0efea622)
+
+
 
 ## 🧩 Project Architecture
 
