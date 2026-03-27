@@ -1,4 +1,4 @@
-# 🎓 Projets Académiques
+# 🎓 Projets Académiques     
 
 Bienvenue sur mon dépôt **projets-academiques**, qui regroupe l'ensemble de mes travaux réalisés en **science des données**, **intelligence artificielle**, et **développement informatique**.  
 Chaque dossier contient un ou plusieurs notebooks/documentations liés à des projets concrets, souvent réalisés lors de cours, de compétitions Kaggle ou de recherches personnelles.
